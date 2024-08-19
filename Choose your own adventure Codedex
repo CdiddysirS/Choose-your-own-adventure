@@ -1,0 +1,92 @@
+def start_game():
+    print("Welcome to the Adventure Game!")
+    print("You find yourself at the entrance of a dark forest.")
+    print("Do you want to enter the forest or walk along the path beside it?")
+    choice = input("Type 'enter' to go into the forest or 'walk' to walk along the path: ").lower()
+
+    if choice == 'enter':
+        enter_forest()
+    elif choice == 'walk':
+        walk_path()
+    else:
+        print("Invalid choice. Please try again.")
+        start_game()
+
+def enter_forest():
+    print("\nYou decide to enter the forest. It's dark and eerie.")
+    print("You hear a rustling sound behind you. Do you want to investigate or keep walking?")
+    choice = input("Type 'investigate' to check the sound or 'walk' to keep walking: ").lower()
+
+    if choice == 'investigate':
+        investigate_sound()
+    elif choice == 'walk':
+        keep_walking()
+    else:
+        print("Invalid choice. Please try again.")
+        enter_forest()
+
+def walk_path():
+    print("\nYou decide to walk along the path.")
+    print("The path is peaceful, and you enjoy the scenery.")
+    print("You come across a small village. Do you want to explore the village or continue walking?")
+    choice = input("Type 'explore' to visit the village or 'continue' to keep walking: ").lower()
+
+    if choice == 'explore':
+        explore_village()
+    elif choice == 'continue':
+        continue_walking()
+    else:
+        print("Invalid choice. Please try again.")
+        walk_path()
+
+def investigate_sound():
+    print("\nYou turn around to investigate the sound.")
+    print("It's a friendly squirrel! It seems to want you to follow it.")
+    print("Do you follow the squirrel or go back to the path?")
+    choice = input("Type 'follow' to follow the squirrel or 'back' to return to the path: ").lower()
+
+    if choice == 'follow':
+        follow_squirrel()
+    elif choice == 'back':
+        enter_forest()
+    else:
+        print("Invalid choice. Please try again.")
+        investigate_sound()
+
+def keep_walking():
+    print("\nYou decide to keep walking.")
+    print("Suddenly, you find a hidden treasure chest!")
+    print("Congratulations, you found the treasure and completed the adventure!")
+    play_again()
+
+def explore_village():
+    print("\nYou explore the village and meet friendly villagers.")
+    print("They invite you to a feast. You enjoy a wonderful meal and make new friends.")
+    print("After the feast, you continue your journey with fond memories.")
+    play_again()
+
+def continue_walking():
+    print("\nYou continue walking and enjoy the beautiful scenery.")
+    print("As the sun sets, you find a cozy inn to rest for the night.")
+    print("You have a peaceful night's sleep and continue your adventure the next day.")
+    play_again()
+
+def follow_squirrel():
+    print("\nYou follow the squirrel deeper into the forest.")
+    print("It leads you to a hidden grove with a magical fountain.")
+    print("You drink from the fountain and feel rejuvenated.")
+    print("You thank the squirrel and continue your adventure with newfound energy.")
+    play_again()
+
+def play_again():
+    choice = input("\nDo you want to play again? Type 'yes' to restart or 'no' to quit: ").lower()
+    if choice == 'yes':
+        start_game()
+    elif choice == 'no':
+        print("Thank you for playing! Goodbye!")
+    else:
+        print("Invalid choice. Please try again.")
+        play_again()
+
+# Start the game
+start_game()
